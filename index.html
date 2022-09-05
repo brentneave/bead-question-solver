@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>It solves the algebra puzzle</title>
+  </head>
+  <body>
+    <script language="javascript">
+      const checkValues = (orange, yellow, blue) =>
+        yellow * 2 + orange * 3 === 22 &&
+        orange * 3 + blue * 2 === 24 &&
+        yellow * 2 + orange + blue * 2 === 26;
+
+      const digits = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+      const colors = {
+        orange: digits,
+        yellow: digits,
+        blue: digits,
+      };
+
+      colors.orange.forEach((orange) => {
+        colors.yellow.forEach((yellow) => {
+          colors.blue.forEach((blue) => {
+            if (checkValues(orange, yellow, blue)) {
+              console.log(
+                "orange:",
+                orange,
+                "yellow:",
+                yellow,
+                "blue:",
+                blue,
+                "answer:",
+                yellow + orange * 2 + blue * 2
+              );
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
